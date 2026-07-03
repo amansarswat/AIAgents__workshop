@@ -1510,7 +1510,7 @@ def build_ui() -> "gr.Blocks":
 
         gr.Markdown(
             "---\nBuilt from [ed-donner/agents](https://github.com/ed-donner/agents), adapted for Azure OpenAI. "
-            "Deeper reference: `PARTICIPANT_HANDOUT.md` (cheat-sheets, glossary) · `FACILITATOR_GUIDE.md` (run sheet)."
+            "Deeper reference: `PARTICIPANT_HANDOUT.md` (cheat-sheets, glossary) · `Understanding-Agentic-AI-Explainer.md` (plain-language primer)."
         )
     return demo
 

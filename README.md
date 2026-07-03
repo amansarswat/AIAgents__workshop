@@ -34,6 +34,13 @@ audience that's seen the demos and asked "yes, but what happens when it **fails*
 | 9 | [LangGraph Workflow](demos/9_langgraph_workflow/) | stateful graph: retry-until-criteria + a human approval gate | LangGraph | Azure only |
 | 10 | [Failure Modes](demos/10_failure_modes/) | cost blowup · infinite loop · prompt injection — each guard engages | OpenAI SDK | Azure only |
 
+**★ Flagship & bonus**
+
+| # | Demo | What it proves | Stack | Needs |
+|---|------|----------------|-------|-------|
+| 11 | [SWE Agent](demos/11_swe_agent/) | autonomous agent fixes a real bug; success is `pytest` exit-0, verified by the harness (frozen tests, sandboxed) | OpenAI SDK + pytest | Azure only |
+| 12 | [Model Router](demos/12_model_router/) | route each request to the cheapest capable model — cheap for easy, frontier for hard | LiteLLM | Azure only |
+
 > 💡 **Demo 1b (`demos/5_native_agents/`)** makes the point that *agentic ≠ AI-dependent*:
 > the agent loop runs fine on plain deterministic code at **$0/decision**, and a
 > *native-first hybrid* escalates to the LLM only for the hard cases to keep cost in check.
@@ -51,41 +58,42 @@ Brave, or Pushover accounts required.
 > `gpt-4o-mini` (API version `2024-10-21`) and produced correct output (Demo 5a runs
 > with no API at all). See the per-demo READMEs for what each one prints.
 
-## Everything is in this one folder
+## What's in this repo
 ```
 agentic-ai-masterclass/
-├── README.md               ← you are here (index)
-├── SETUP.md                ← environment setup + troubleshooting
-├── FACILITATOR_GUIDE.md    ← minute-by-minute run sheet, slide outline, talk track, fallbacks
-├── SPEAKER_NOTES.md        ← a timed 20-min talk track per demo (developer-friendly, anti-confusion)
-├── PARTICIPANT_HANDOUT.md  ← concepts, cheat-sheets, "when to use which", glossary, links
-├── app.py                  ← interactive UI (Gradio): every demo on one self-explanatory page
-├── smoke_test.py           ← confirm Azure connectivity
-├── requirements.txt        ·  .env.example  ·  .gitignore
-├── .venv/                  ← pre-built virtual env (presenter's machine)
-├── demos/                  ← runnable demos, each with its own README
-│   │  # Act 1 — Foundations
-│   ├── 1_agent_loop/           raw LLM agent loop
-│   ├── 5_native_agents/        Demo 1b — native ($0) + hybrid cost-control
-│   ├── 2_openai_agents_sdk/    OpenAI Agents SDK (tools, handoffs)
-│   ├── 3_crewai_debate/        CrewAI declarative crew
-│   ├── 4_mcp_trading/          MCP — your own tool server
-│   │  # Act 2 — Production depth
-│   ├── 6_resilient_agent/      retry / failover / escalation around a flaky tool
-│   ├── 7_eval_trace/           eval harness: trace + score vs gold labels
-│   ├── 8_sqlite_agent/         agent over a REAL sqlite3 DB (read guard + write tool)
-│   ├── 9_langgraph_workflow/   LangGraph state machine + human-in-the-loop gate
-│   └── 10_failure_modes/       cost blowup · infinite loop · prompt injection + guards
-└── source-course/          ← the cloned ed-donner/agents course (reference)
+├── README.md                             ← you are here (index)
+├── SETUP.md                              ← environment setup + troubleshooting
+├── PARTICIPANT_HANDOUT.md                ← concepts, cheat-sheets, "when to use which", glossary, links
+├── Understanding-Agentic-AI-Explainer.md ← plain-language primer (Workflow · Agent · Agentic AI · MCP · LangGraph)
+├── app.py                                ← interactive UI (Gradio): every demo on one self-explanatory page
+├── smoke_test.py                         ← confirm Azure connectivity
+├── requirements.txt  ·  .env.example  ·  .gitignore
+└── demos/                                ← runnable demos (Act 1–2 demos each have a README)
+    │  # Act 1 — Foundations
+    ├── 1_agent_loop/           raw LLM agent loop
+    ├── 5_native_agents/        Demo 1b — native ($0) + hybrid cost-control
+    ├── 2_openai_agents_sdk/    OpenAI Agents SDK (tools, handoffs)
+    ├── 3_crewai_debate/        CrewAI declarative crew
+    ├── 4_mcp_trading/          MCP — your own tool server
+    │  # Act 2 — Production depth
+    ├── 6_resilient_agent/      retry / failover / escalation around a flaky tool
+    ├── 7_eval_trace/           eval harness: trace + score vs gold labels
+    ├── 8_sqlite_agent/         agent over a REAL sqlite3 DB (read guard + write tool)
+    ├── 9_langgraph_workflow/   LangGraph state machine + human-in-the-loop gate
+    ├── 10_failure_modes/       cost blowup · infinite loop · prompt injection + guards
+    │  # ★ Flagship & bonus
+    ├── 11_swe_agent/           autonomous SWE agent — fixes a real bug, verified by pytest
+    └── 12_model_router/        LiteLLM cost router — cheap model for easy, frontier for hard
 ```
+
+> `.venv/` and `source-course/` live on the presenter's machine but are **git-ignored — not in this repo**. Create the virtual env with the [Quick start](#quick-start) below; clone the source course separately from [ed-donner/agents](https://github.com/ed-donner/agents).
 
 ## The deliverables
 - **[SETUP.md](SETUP.md)** — get the environment working before the session.
-- **[FACILITATOR_GUIDE.md](FACILITATOR_GUIDE.md)** — minute-by-minute run sheet + slide outline + talk track + fallbacks.
-- **[SPEAKER_NOTES.md](SPEAKER_NOTES.md)** — a timed **20-minute talk track per demo**: hook → concept → architecture → live run → takeaway → "confusions to preempt" → transition.
 - **[PARTICIPANT_HANDOUT.md](PARTICIPANT_HANDOUT.md)** — concepts, framework cheat-sheets, "when to use which", glossary, links.
-- **[demos/](demos/)** — ten runnable demos across two acts (Azure-ready; Demos 5a and 6 need no API at all), each with its own README.
-- **[source-course/](source-course/)** — the full ed-donner/agents course this is built from, for deeper reference (LangGraph, AutoGen, capstones, etc.).
+- **[Understanding-Agentic-AI-Explainer.md](Understanding-Agentic-AI-Explainer.md)** — a plain-language primer on Workflow · AI Agent · Agentic AI · MCP · LangGraph (also shown on the app's Overview tab).
+- **[demos/](demos/)** — twelve runnable demos (Azure-ready; Demos 5a and 6 need no API at all); the Act 1–2 demos each include a README.
+- **Source course** — this pack is built from [ed-donner/agents](https://github.com/ed-donner/agents) ("The Complete Agentic AI Engineering Course"). Clone it separately for deeper reference (LangGraph, AutoGen, capstones, etc.).
 
 ## Quick start
 ```bash
@@ -123,6 +131,6 @@ keys** in the Azure portal before the session and put only the new key in `.env`
 (which is git-ignored). Never commit secrets.
 
 ## Bonus material
-The handout also summarises **LangGraph** (graph/state-machine agents) and
-**Microsoft AutoGen** (conversational multi-agent teams) — the two other frameworks
-in the source course — so you can extend the class to a longer format later.
+The handout also summarises **LangGraph** (graph/state-machine agents — see Demo 9) and
+**Microsoft AutoGen** (conversational multi-agent teams) — two more frameworks from the
+broader course — so you can extend the class to a longer format later.
