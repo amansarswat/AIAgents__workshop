@@ -1,6 +1,6 @@
 # Setup Guide
 
-Do this **before** the masterclass — ideally a day ahead so any install gremlins
+Do this **before** the demo — ideally a day ahead so any install gremlins
 are caught early. Total time: ~15 minutes (longer if CrewAI build tools are needed).
 
 ---
@@ -24,7 +24,7 @@ Use the new key below. Keys live only in `.env`, which is git-ignored.
 
 ## 2. Create a virtual environment
 ```bash
-cd agentic-ai-masterclass
+cd AIAgents__workshop
 python -m venv .venv
 # Windows PowerShell:
 .venv\Scripts\Activate.ps1
@@ -85,7 +85,7 @@ Expected:
 Endpoint  : https://...cognitiveservices.azure.com
 Deployment: gpt-4o-mini
 ✅ Response: Azure OK
-Azure OpenAI is reachable. You're ready for the masterclass.
+Azure OpenAI is reachable. You're ready for the demo.
 ```
 If this passes, **all four demos will connect** — they share the same wiring.
 

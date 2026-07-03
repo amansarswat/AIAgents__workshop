@@ -2,7 +2,7 @@
 A tiny, self-contained trading-account model — NO external APIs.
 
 The course version (6_mcp/accounts.py) pulls live prices from Polygon.io and
-persists to SQLite. For a dependency-free masterclass demo we use a fixed price
+persists to SQLite. For a dependency-free demo we use a fixed price
 table and a single local JSON file. The interface is the same, so the MCP server
 on top of it is unchanged in spirit.
 """

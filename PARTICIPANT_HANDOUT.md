@@ -1,4 +1,4 @@
-# Participant Handout — Agentic AI Masterclass
+# Participant Handout — Agentic AI Demo
 
 Your take-home reference. Concepts first, then a one-page cheat-sheet per framework,
 a "when to use which" guide, the Azure adaptation recipe, a glossary, and links.

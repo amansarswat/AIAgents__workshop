@@ -1,4 +1,4 @@
-# Agentic AI Masterclass — dependencies (Python 3.10+)
+# Agentic AI Demo — dependencies (Python 3.10+)
 # Install with:  pip install -r requirements.txt
 
 python-dotenv>=1.0

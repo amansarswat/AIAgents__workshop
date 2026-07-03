@@ -1,6 +1,6 @@
-# Agentic AI Masterclass (2 hours)
+# Agentic AI Demo (2 hours)
 
-A hands-on, **watch-along** masterclass on the *types* of AI agents and where each
+A hands-on, **watch-along** demo on the *types* of AI agents and where each
 one fits — built from [ed-donner/agents](https://github.com/ed-donner/agents)
 ("The Complete Agentic AI Engineering Course") and **adapted to run on Azure OpenAI**.
 
@@ -60,7 +60,7 @@ Brave, or Pushover accounts required.
 
 ## What's in this repo
 ```
-agentic-ai-masterclass/
+AIAgents__workshop/
 ├── README.md                             ← you are here (index)
 ├── SETUP.md                              ← environment setup + troubleshooting
 ├── PARTICIPANT_HANDOUT.md                ← concepts, cheat-sheets, "when to use which", glossary, links
@@ -97,7 +97,7 @@ agentic-ai-masterclass/
 
 ## Quick start
 ```bash
-cd agentic-ai-masterclass
+cd AIAgents__workshop
 python -m venv .venv
 .venv\Scripts\activate            # Windows;  source .venv/bin/activate on mac/linux
 pip install -r requirements.txt

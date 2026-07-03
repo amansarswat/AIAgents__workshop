@@ -44,7 +44,7 @@ try:
         max_tokens=10,
     )
     print("\n✅ Response:", resp.choices[0].message.content)
-    print("Azure OpenAI is reachable. You're ready for the masterclass.")
+    print("Azure OpenAI is reachable. You're ready for the demo.")
 except Exception as e:
     print("\n❌ Call failed:", repr(e))
     print("Common fixes: check the deployment name matches the Azure portal, "

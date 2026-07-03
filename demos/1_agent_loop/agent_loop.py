@@ -31,7 +31,7 @@ except Exception:
 from dotenv import load_dotenv
 from openai import AzureOpenAI
 
-# --- Load .env from the masterclass root (works regardless of where you run from) ---
+# --- Load .env from the project root (works regardless of where you run from) ---
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env")
 

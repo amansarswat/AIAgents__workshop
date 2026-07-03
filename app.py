@@ -1,5 +1,5 @@
 """
-Agentic AI Masterclass — interactive control panel
+Agentic AI Demo — interactive control panel
 ==================================================
 A working console for the session, not a slideshow. Every demo is presented as a
 real system you can reason about and drive:
@@ -1217,7 +1217,7 @@ OVERVIEW_MD = r"""
 **The business problem.** We are launching and running **Orbit**, a subscription e-commerce SaaS.
 Like any real company that's not one task — it's a dozen: take the product to market, reach
 customers, support them, keep the storefront and payments running, watch the AI bill, and make
-sure none of it breaks or gets abused. This masterclass takes that *single* objective and solves
+sure none of it breaks or gets abused. This demo takes that *single* objective and solves
 each piece with the **right level of automation** — so you see exactly where each tool fits.
 
 **How we broke it down.** For every piece we asked one question: *how much of the control should a
@@ -1431,7 +1431,7 @@ def _make_input_component(spec):
 
 
 def build_ui() -> "gr.Blocks":
-    with gr.Blocks(title="Agentic AI Masterclass") as demo:
+    with gr.Blocks(title="Agentic AI Demo") as demo:
         with gr.Tabs():
             # ---------- Overview ----------
             with gr.Tab("📖 Overview"):
