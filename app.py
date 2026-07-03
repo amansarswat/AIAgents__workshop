@@ -231,7 +231,7 @@ flowchart TD
         "inputs": [
             {"kind": "textarea", "env": "DEMO_EXTRA_INCIDENT",
              "label": "Add your own NOVEL incident (optional → forces an LLM escalation)", "lines": 2,
-             "value": "",
+             "value": "Mobile users see a blank cart after the 14:30 deploy; desktop unaffected; CPU/mem/disk all normal.",
              "placeholder": "e.g. Mobile users see a blank cart after the 14:30 deploy; desktop unaffected; CPU/mem/disk all normal."},
         ],
     },
@@ -394,7 +394,7 @@ flowchart LR
             {"kind": "text", "env": "DEMO_NAME", "label": "Customer name", "value": "Alice"},
             {"kind": "textarea", "env": "DEMO_REQUEST",
              "label": "Request to the agent (blank → default purchase for the customer above)", "lines": 2,
-             "value": "", "placeholder": "Purchase 10 WIDGET and 2 GIZMO with my store credit, then report my remaining credit and items."},
+             "value": "Purchase 10 WIDGET and 2 GIZMO with my store credit, then report my remaining credit and items.", "placeholder": "Purchase 10 WIDGET and 2 GIZMO with my store credit, then report my remaining credit and items."},
         ],
     },
 
@@ -499,7 +499,7 @@ flowchart TD
         "when": "Before you ship, and on every prompt/model change thereafter. This is the day-to-day job of operating an agent.",
         "inputs": [
             {"kind": "textarea", "env": "DEMO_EVAL_TICKET", "label": "Add your own ticket to the eval set (optional)", "lines": 2,
-             "value": "", "placeholder": "e.g. My invoice shows the wrong VAT rate for an EU order."},
+             "value": "My invoice shows the wrong VAT rate for an EU order.", "placeholder": "e.g. My invoice shows the wrong VAT rate for an EU order."},
             {"kind": "text", "env": "DEMO_EVAL_EXPECT", "label": "Expected category for your ticket", "value": "billing"},
         ],
     },
@@ -768,7 +768,7 @@ flowchart TD
         "when": "High-volume LLM traffic where most requests are routine. Pairs with Demo 1b (rules vs LLM); this is the tier up — cheap model vs frontier model.",
         "inputs": [
             {"kind": "textarea", "env": "DEMO_EXTRA_TASK", "label": "Add your own task to route (optional)", "lines": 2,
-             "value": "", "placeholder": "e.g. Explain the CAP theorem and its practical trade-offs for a payments datastore."},
+             "value": "Explain the CAP theorem and its practical trade-offs for a payments datastore.", "placeholder": "e.g. Explain the CAP theorem and its practical trade-offs for a payments datastore."},
         ],
     },
 ]
