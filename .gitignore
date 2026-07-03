@@ -1,0 +1,47 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Demo outputs
+demos/**/sent_email.txt
+demos/**/accounts.json
+demos/3_crewai_debate/output/
+
+# Gradio UI cache / flagged data (created by app.py)
+.gradio/
+flagged/
+
+# Demo 8 — real SQLite database (regenerated on each run)
+demos/8_sqlite_agent/shop.db
+
+# Flagship — the agent's sandboxed workspace (regenerated on each run)
+demos/11_swe_agent/_workspace/
+
+# Reference clone of ed-donner/agents — lives in the folder for the class, but don't
+# re-commit an upstream repo into yours. Delete this line if you DO want it tracked.
+source-course/
+
+# Presenter-only docs — not published to the public/audience repo
+FACILITATOR_GUIDE.md
+SPEAKER_NOTES.md
+
+# Source handbook and other binary references — not redistributed
+*.pdf
+
+# Extra env variants (but keep .env.example tracked so participants have a template)
+.env.*
+!.env.example
+
+# Editors / OS / tooling noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+.ipynb_checkpoints/
+.pytest_cache/

@@ -1,0 +1,33 @@
+# Agentic AI Masterclass — dependencies (Python 3.10+)
+# Install with:  pip install -r requirements.txt
+
+python-dotenv>=1.0
+
+# Demo 1 (agent loop) and the Azure wiring everywhere
+openai>=1.40
+
+# Demo 2 + Demo 4 — OpenAI Agents SDK (imported as `agents`)
+openai-agents>=0.0.16
+
+# Demo 3 — CrewAI. Newer CrewAI (1.x) needs litellm explicitly installed to route
+# Azure via the `azure/<deployment>` model string + is_litellm=True (see debate.py).
+# azure-ai-inference must be present too, or CrewAI's provider lookup errors on import
+# even though we route through LiteLLM.
+crewai>=0.130.0
+litellm>=1.60
+azure-ai-inference>=1.0.0b9
+
+# Demo 4 — Model Context Protocol (FastMCP server)
+mcp>=1.6.0
+
+# Interactive UI (app.py) — the self-explanatory web front-end for all demos
+gradio>=4.44
+
+# Production-depth track (Demos 6–10). Demo 9 uses LangGraph (stateful graph +
+# human-in-the-loop) via langchain-openai's AzureChatOpenAI. Demos 6–8, 10 use the deps above
+# (Demo 8 uses the stdlib `sqlite3`, no install needed).
+langgraph>=0.2
+langchain-openai>=0.2
+
+# Flagship demo (11) — the SWE agent runs a real pytest suite as its success oracle
+pytest>=7
